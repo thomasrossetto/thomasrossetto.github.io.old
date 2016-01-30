@@ -33,6 +33,7 @@
                 }
                 $.each(data.query.results.rss, function (e, itm) {
                   if(itm.channel.item.title.toLowerCase().indexOf("wallflux") == -1 && itm.channel.item.description.toLowerCase().indexOf("wallflux") == -1){
+                    itm.channel.item.title = itm.channel.item.title.replace("Group wall post by" , "Pubblicato da :");
                     s += '<li class="icon fa-facebook"><h3><a href="' + itm.channel.item.link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></h3>';
 
                     if (def.ShowPubDate){
