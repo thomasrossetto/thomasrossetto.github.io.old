@@ -32,7 +32,7 @@
                     data.query.results.rss = [data.query.results.rss];
                 }
                 $.each(data.query.results.rss, function (e, itm) {
-                  if(!itm.channel.item.title.match("^Wallflux demonstration")){
+                  if(itm.channel.item.title.toLowerCase().indexOf("wallflux") == -1 && itm.channel.item.description.toLowerCase().indexOf("wallflux") == -1){
                     s += '<li class="icon fa-facebook"><h3><a href="' + itm.channel.item.link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></h3>';
 
                     if (def.ShowPubDate){
@@ -52,6 +52,9 @@
                     }
                     if (def.ShowDesc) {
                         s += '';
+                          itm.channel.item.description = itm.channel.item.description.replace("posted a link to Programmers in Padua's wall:" , "-");
+                          itm.channel.item.description = itm.channel.item.description.replace("wrote on Programmers in Padua's wall:" , "-");
+                          itm.channel.item.description = itm.channel.item.description.replace("likes)" , "<i class='fa fa-thumbs-up'></i>)");
                          if (def.DescCharacterLimit > 0 && itm.channel.item.description.length > def.DescCharacterLimit) {
                             s += itm.channel.item.description.substring(0, def.DescCharacterLimit) + '...';
                         }
