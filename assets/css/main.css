@@ -3640,6 +3640,7 @@
 		text-align: center;
 	}
 
+
 		#main > header h2 {
 			font-size: 1.75em;
 			margin: 0 0 0.5em 0;
@@ -3823,4 +3824,8 @@
 
 	.justify{
 		text-align: justify;
+	}
+
+	.calendar {
+		text-align: center;
 	}
