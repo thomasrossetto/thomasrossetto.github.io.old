@@ -3394,6 +3394,7 @@
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+		background-color: rgba(244, 156, 37, 0.34);
 	}
 
 		#banner h2 {
